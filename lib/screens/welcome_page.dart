@@ -32,7 +32,7 @@ class WelcomePage extends StatelessWidget {
                       height: 20,
                     ),
                     const Text(
-                      "Enterprise team\ncollaboration.",
+                      "Never Forget a Pill\n with TabMind",
                       style: kHeadline,
                       textAlign: TextAlign.center,
                     ),
@@ -42,7 +42,7 @@ class WelcomePage extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: const Text(
-                        "Bring together your files, your tools, project and people.Including a new mobile and desktop application.",
+                        "Simplify your medication routine. TabMind provides gentle reminders and easy tracking, ensuring you or your loved ones stay on top of their health. Get started today!",
                         style: kBodyText,
                         textAlign: TextAlign.center,
                       ),
@@ -66,20 +66,20 @@ class WelcomePage extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: MyTextButton(
-                      bgColor: Colors.transparent,
-                      buttonName: 'Sign In',
-                      textColor: Colors.white,
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => SignInPage()),
-                        );
-                      },
-                    ),
-                  ),
+                  // const SizedBox(width: 20),
+                  // Expanded(
+                  //   child: MyTextButton(
+                  //     bgColor: Colors.transparent,
+                  //     buttonName: 'Sign In',
+                  //     textColor: Colors.white,
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(builder: (_) => SignInPage()),
+                  //       );
+                  //     },
+                  //   ),
+                  // ),
                 ],
               ),
             ],

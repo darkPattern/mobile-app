@@ -358,6 +358,7 @@ class _HealthAppState extends State<HealthApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
 
         body: Container(

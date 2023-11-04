@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:kodikon/screens/bio.dart';
 import 'package:kodikon/screens/health_data.dart';
 import 'package:kodikon/screens/homescreen.dart';
+import 'package:kodikon/screens/register_page.dart';
 import 'package:kodikon/screens/welcome_page.dart';
 
 import 'package:provider/provider.dart';
@@ -63,7 +64,7 @@ class _MainScreenState extends State<MainScreen>
 
     List<Widget> _widgetOptions = <Widget>[
       HomePage(),
-      ProfilePage(),
+      RegisterPage(),
       HealthApp(),
 
 
@@ -127,7 +128,7 @@ class _MainScreenState extends State<MainScreen>
                           ? Column(
                               children: [
                                 ImageIcon(
-                                  Image.asset('assets/icons/home_active.png')
+                                  Image.asset('assets/icons/upload.png')
                                       .image,
                                   size: 24.0,
                                 ),
@@ -142,7 +143,7 @@ class _MainScreenState extends State<MainScreen>
                               ],
                             )
                           : ImageIcon(
-                              Image.asset('assets/icons/home_inactive.png')
+                              Image.asset('assets/icons/upload.png')
                                   .image,
                               size: 24.0,
                             ),
@@ -165,7 +166,7 @@ class _MainScreenState extends State<MainScreen>
                           ? Column(
                               children: [
                                 ImageIcon(
-                                  Image.asset('assets/policy.png').image,
+                                  Image.asset('assets/icons/health.png').image,
                                   size: 24.0,
                                 ),
                                 Container(
@@ -180,7 +181,7 @@ class _MainScreenState extends State<MainScreen>
                             )
                           //background: rgba(246, 220, 220, 1);
                           : ImageIcon(
-                              Image.asset('assets/policy.png').image,
+                              Image.asset('assets/icons/health.png').image,
                               size: 24.0,
                             ),
                     ],
@@ -196,7 +197,7 @@ class _MainScreenState extends State<MainScreen>
                           ? Column(
                               children: [
                                 ImageIcon(
-                                  Image.asset('assets/claim.png').image,
+                                  Image.asset('assets/icons/bio.png').image,
                                   size: 24.0,
                                 ),
                                 Container(
@@ -210,7 +211,7 @@ class _MainScreenState extends State<MainScreen>
                               ],
                             )
                           : ImageIcon(
-                              Image.asset('assets/claim.png').image,
+                              Image.asset('assets/icons/bio.png').image,
                               size: 24.0,
                             ),
                       _selectedIndex == 2
@@ -218,6 +219,42 @@ class _MainScreenState extends State<MainScreen>
                               '',
                               style: TextStyle(fontSize: 14.0),
                             )
+                          : const Text(''),
+                    ],
+                  ),
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  icon: Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 6.0,
+                    children: [
+                      _selectedIndex == 3
+                          ? Column(
+                        children: [
+                          ImageIcon(
+                            Image.asset('assets/icons/bio.png').image,
+                            size: 24.0,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.only(top: 5),
+                            height: 2,
+                            width: 12.0,
+                          ),
+                        ],
+                      )
+                          : ImageIcon(
+                        Image.asset('assets/icons/bio.png').image,
+                        size: 24.0,
+                      ),
+                      _selectedIndex == 3
+                          ? const Text(
+                        '',
+                        style: TextStyle(fontSize: 14.0),
+                      )
                           : const Text(''),
                     ],
                   ),
