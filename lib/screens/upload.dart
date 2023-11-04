@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:kodikon/provider/upload_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -79,9 +80,22 @@ class _UploadState extends State<Upload> with SingleTickerProviderStateMixin {
       await Permission.storage.request();
     }
   }
+  final FlutterTts flutterTts = FlutterTts();
+  Future<void> _speakListOfText(List<String> textList) async {
+    await flutterTts.setVolume(1.0);
+    await flutterTts.setSpeechRate(0.5);
+    await flutterTts.setPitch(1.0);
+
+    for (String text in textList) {
+      await flutterTts.speak(text);
+      // A small delay between each text segment being spoken
+      await Future.delayed(Duration(seconds: 1));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Consumer<FileUploadProvider>(
           builder: (context, data, child) {
@@ -89,7 +103,7 @@ class _UploadState extends State<Upload> with SingleTickerProviderStateMixin {
               child: Column(
                 children: <Widget>[
                   SizedBox(height: 100,),
-                  Image.network(_image, width: 300,),
+                 // Image.network(_image, width: 300,),
                   SizedBox(height: 50,),
                   Text(
                     'Upload your file',
@@ -214,6 +228,7 @@ class _UploadState extends State<Upload> with SingleTickerProviderStateMixin {
                           height: 45,
                           onPressed: () async{
                             await data.uploadFile(_file!);
+                            await _speakListOfText(data.parsedMeds);
 
                           },
                           color: Colors.black,

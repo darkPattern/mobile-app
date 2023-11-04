@@ -137,6 +137,7 @@ class FileUploadProvider extends ChangeNotifier {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString('savedResponse', json.encode(responseBody));
 
+
         notifyListeners(); // Notify the listeners about the change in state
       } else {
         // Handle the case when the structure of the response doesn't match expectations

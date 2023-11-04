@@ -45,7 +45,7 @@ class _DetailsPageState extends State<DetailsPage> {
               children: [
                 const Text(
                   'Description',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,color: Colors.white),
                 ),
                 const SizedBox(
                   height: 3,
@@ -56,10 +56,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     widget.pill.description,
                     style: TextStyle(
                         height: 0.95,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSurface
-                            .withOpacity(0.4),
+                        color: Colors.white,
                         fontWeight: FontWeight.w300,
                         fontSize: 16),
                   ),
@@ -75,15 +72,12 @@ class _DetailsPageState extends State<DetailsPage> {
               Text(
                 '${widget.pill.title}, 250mg',
                 style:
-                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
+                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 28,color: Colors.white),
               ),
               Text(
                 '${widget.pill.dosage} pill, once per day',
                 style: TextStyle(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onSurface
-                        .withOpacity(0.33),
+                    color: Colors.white,
                     fontSize: 20),
               ),
               SizedBox(
@@ -99,7 +93,7 @@ class _DetailsPageState extends State<DetailsPage> {
               Text(
                 widget.pill.time.format(context),
                 style: const TextStyle(
-                  fontSize: 32,
+                  fontSize: 32,color: Colors.white
                 ),
               )
             ],

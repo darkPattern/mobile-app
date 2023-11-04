@@ -173,7 +173,7 @@ class _MainScreenState extends State<MainScreen>
       statusBarIconBrightness: Brightness.dark,
       //set brightness for icons, like dark background light icons
     ));
-    List<String> headers = ["Home", "Upload", "Y"];
+    List<String> headers = ["Home", "Add Prescription", "My Stats","Dinner"];
 
     List<Widget> _widgetOptions = <Widget>[
       Home(),
@@ -187,13 +187,50 @@ class _MainScreenState extends State<MainScreen>
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.logout),
-          onPressed: () {
-            _showLogoutAlert(context);
-            // controller.toggle();
+        elevation: 0,
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color:Colors.black,
+                size: 25,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
           },
         ),
+        title: Text(
+          headers[_selectedIndex],
+          style: const TextStyle(
+            fontFamily: 'medium',
+            fontSize: 18,
+            color: Color(0xff000000),
+          ),
+          textHeightBehavior: const TextHeightBehavior(applyHeightToFirstAscent: false),
+          textAlign: TextAlign.center,
+          softWrap: false,
+        ),
+        backgroundColor: Colors.white,
+        actions: const <Widget>[
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //     Image(
+          //       image: Image.asset('assets/icons/notIcon.png').image,
+          //       height: 20.0,
+          //       width: 20.0,
+          //     ),
+          //     const SizedBox(
+          //       width: 20,
+          //     ),
+          //   ],
+          // ),
+        ],
       ),
       backgroundColor: Colors.transparent,
       resizeToAvoidBottomInset: false,

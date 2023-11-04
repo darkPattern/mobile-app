@@ -84,6 +84,7 @@ dependencies:
   sliver_tools: ^0.2.8
   flutter_svg: ^2.0.9
   awesome_notifications: ^0.8.2
+  flutter_tts: ^3.8.3
 
 
 dev_dependencies:

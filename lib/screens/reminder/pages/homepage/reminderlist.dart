@@ -109,7 +109,7 @@ class PillCard extends StatelessWidget {
             Hero(
               tag: 'image$index',
               child: Image.asset(
-                "assets/images/Pill.png",
+                "lib/screens/reminder/assets/images/Pill.png",
                 fit: BoxFit.cover,
               ),
             ),
