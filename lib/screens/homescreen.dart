@@ -1,10 +1,9 @@
-
 import 'dart:math';
-
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:kodikon/map_horizontal_example.dart';
 import 'package:kodikon/screens/Articles%20-%20SafeCarousel/AllArticles.dart';
 import 'package:kodikon/screens/Articles%20-%20SafeCarousel/SafeCarousel.dart';
 import 'package:kodikon/screens/Emergency.dart';
@@ -15,6 +14,7 @@ import 'package:kodikon/screens/LiveSafeSpots/PoliceStationCard.dart';
 import 'package:kodikon/screens/reminder/pages/homepage/index.dart';
 
 import 'package:url_launcher/url_launcher.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -38,6 +38,7 @@ class _HomeState extends State<Home> {
       setState(() {});
     }
   }
+
   final List<Widget> items = [
     _buildCarouselItem(Colors.blue, 'assets/icons/mindfulness.png'),
     _buildCarouselItem(Colors.red, 'lib/assets/icons/notes.png'),
@@ -55,6 +56,7 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -105,7 +107,7 @@ class _HomeState extends State<Home> {
                 Emergency(),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, bottom: 10, top: 10),
+                      const EdgeInsets.only(left: 16.0, bottom: 10, top: 10),
                   child: Text(
                     "Explore LiveSafe",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -164,9 +166,7 @@ class LiveSafe extends StatelessWidget {
   }
 }
 
-
 class SpecialistsGrid extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final List<SpecialistItem> specialistItems = [
@@ -175,7 +175,10 @@ class SpecialistsGrid extends StatelessWidget {
         name: 'Mindfulness',
         image: 'assets/icons/mindfulness.png',
         onChanged: () {
-          launchUrl(Uri.parse("https://dice-game-davinasd.vercel.app/"));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => FullScreenImageDisplay()));
         },
       ),
       SpecialistItem(
@@ -183,7 +186,8 @@ class SpecialistsGrid extends StatelessWidget {
         name: 'Pill Calendar',
         image: 'assets/images/urgent.png',
         onChanged: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage1()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomePage1()));
         },
       ),
       // Add more SpecialistItem instances as needed
@@ -199,7 +203,8 @@ class SpecialistsGrid extends StatelessWidget {
       children: List.generate(specialistItems.length, (index) {
         return GestureDetector(
           onTap: () {
-            specialistItems[index].onChanged(); // Trigger the onChanged function
+            specialistItems[index]
+                .onChanged(); // Trigger the onChanged function
           },
           child: Card(
             elevation: 1.0,
@@ -267,4 +272,3 @@ class SpecialistItem {
     required this.onChanged,
   });
 }
-

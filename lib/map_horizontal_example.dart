@@ -10,7 +10,7 @@ class FullScreenImageDisplay extends StatelessWidget {
         child: Stack(
           children: [
             GestureDetector(
-              onTap: () {
+              onDoubleTap: () {
                 launchUrl(Uri.parse("https://dice-game-davinasd.vercel.app/"));
 
                 // Action when the first image is tapped
@@ -29,6 +29,13 @@ class FullScreenImageDisplay extends StatelessWidget {
                 launchUrl(Uri.parse("https://yuri-becker.github.io/react-jigsaw-puzzle/"));
                 print('Second image tapped');
                 // Add your action here when the second image is pressed
+              },
+              onDoubleTap: () {
+                launchUrl(Uri.parse("https://dice-game-davinasd.vercel.app/"));
+
+                // Action when the first image is tapped
+                print('First image tapped');
+                // Add your action here when the first image is pressed
               },
               child: Image.asset(
                 'assets/drawable/map_vertical.png',

@@ -184,8 +184,8 @@ class _MainScreenState extends State<MainScreen>
       HealthApp(),
       CarouselWithCardsScreen(),
       Doctor(),
-     // MyHomePage(),
-      FullScreenImageDisplay(),
+      MyHomePage(),
+      //FullScreenImageDisplay(),
 
 
 
@@ -463,7 +463,7 @@ class _MainScreenState extends State<MainScreen>
                           ? Column(
                         children: [
                           ImageIcon(
-                            Image.asset('assets/icons/calendar.png').image,
+                            Image.asset('assets/icons/cart.png').image,
                             size: 24.0,
                           ),
                           Container(
@@ -477,7 +477,7 @@ class _MainScreenState extends State<MainScreen>
                         ],
                       )
                           : ImageIcon(
-                        Image.asset('assets/icons/calendar.png').image,
+                        Image.asset('assets/icons/cart.png').image,
                         size: 24.0,
                       ),
                       _selectedIndex == 5
