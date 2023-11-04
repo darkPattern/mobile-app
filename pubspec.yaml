@@ -121,6 +121,7 @@ flutter:
     - lib/screens/reminder/assets/fonts/
     - lib/screens/reminder/assets/icons/
     - lib/screens/reminder/assets/images/
+    - lib/screens/pharmacy/assets/images/
 
 
 
