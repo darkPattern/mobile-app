@@ -89,6 +89,7 @@ dependencies:
   flutter_map: ^6.0.1
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -122,6 +123,8 @@ flutter:
     - lib/screens/reminder/assets/icons/
     - lib/screens/reminder/assets/images/
     - lib/screens/pharmacy/assets/images/
+    - assets/drawable/
+    - assets/svg/
 
 
 

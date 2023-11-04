@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kodikon/map_horizontal_example.dart';
 import 'package:kodikon/screens/Doctor/screens/home.dart';
 import 'package:kodikon/screens/bio.dart';
 import 'package:kodikon/screens/health_data.dart';
@@ -183,7 +184,9 @@ class _MainScreenState extends State<MainScreen>
       HealthApp(),
       CarouselWithCardsScreen(),
       Doctor(),
-      MyHomePage(),
+     // MyHomePage(),
+      FullScreenImageDisplay(),
+
 
 
     ];
