@@ -35,19 +35,19 @@ class SafeCarousel extends StatelessWidget {
                         //   ),
                         // ),
                         if (index == 0) {
-                          launchUrl(Uri.parse("https://www.who.int/news-room/questions-and-answers/item/how-do-i-protect-my-health-in-a-flood?gclid=Cj0KCQjwkqSlBhDaARIsAFJANkijx8wlqobW9XymjNBlhXbakvUFLjg8kQuDtd7WJf9IESSBBKyEMswaAsOMEALw_wcB#"));
+                          launchUrl(Uri.parse("https://www.health.harvard.edu/staying-healthy/wrong-sized-blood-pressure-cuff-can-throw-off-readings"));
 
 //https://floodlist.com/news
 //  "https://a-z-animals.com/blog/the-deadliest-floods-of-all-time/"
 //https://ffs.india-water.gov.in/
                         } else if (index == 1) {
-                          launchUrl(Uri.parse("https://floodlist.com/news"));
+                          launchUrl(Uri.parse("https://www.health.harvard.edu/staying-healthy/the-secret-to-finding-a-primary-care-provider-be-flexible"));
 
                         } else if (index == 2) {
-                          launchUrl(Uri.parse("https://a-z-animals.com/blog/the-deadliest-floods-of-all-time/"));
+                          launchUrl(Uri.parse("https://www.health.harvard.edu/staying-healthy/staying-safe-while-getting-well"));
 
                         } else {
-                          launchUrl(Uri.parse('https://ffs.india-water.gov.in/'));
+                          launchUrl(Uri.parse('https://www.health.harvard.edu/mens-health/study-questions-commercial-mens-health-clinics-services'));
 
 
                         }
