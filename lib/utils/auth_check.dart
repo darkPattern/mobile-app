@@ -5,6 +5,8 @@ import 'package:kodikon/constants.dart';
 import 'package:kodikon/provider/auth_provider.dart';
 import 'package:kodikon/provider/upload_provider.dart';
 import 'package:kodikon/screens/main_class.dart';
+import 'package:kodikon/screens/reminder/models/date.dart';
+import 'package:kodikon/screens/reminder/router/routes.dart';
 import 'package:kodikon/screens/slider.dart';
 
 import 'package:provider/provider.dart';
@@ -31,11 +33,18 @@ class AuthCheck extends StatelessWidget {
             create: (ctx) => FileUploadProvider(),
             update: (ctx, auth, _) => FileUploadProvider(),
           ),
+          ChangeNotifierProxyProvider<AuthProvider, DataModel>(
+            create: (ctx) => DataModel(),
+            update: (ctx, auth, _) => DataModel(),
+          ),
+
         ],
         child: Consumer<AuthProvider>(
             builder: (ctx, auth, _) => MaterialApp(
                   debugShowCheckedModeBanner: false,
                   title: 'MyShop',
+              initialRoute: RouteManager.homePage,
+              onGenerateRoute: RouteManager.generateRoute,
               theme: ThemeData(
                 textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
                 scaffoldBackgroundColor: kBackgroundColor,

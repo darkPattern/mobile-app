@@ -59,13 +59,10 @@ class _SplashPageState extends State<SplashPage> {
               ),
               Image.asset("assets/heartbeat.png", color: Colors.white,height: 100,),
               Text(
-                "Time Health",
+                "",
                 style: TextStyles.h1Style.white,
               ),
-              Text(
-                "By healthcare Evolution",
-                style: TextStyles.bodySm.white.bold,
-              ),
+
               Expanded(
                 flex: 7,
                 child: SizedBox(),
