@@ -6,10 +6,10 @@ List<List<String>> sweetSayings = [
 ];
 
 List<String> articleTitle = [
-  "Sop To Follow In Floods",
-  "Deadliest Floods And their Impact",
-  "Recent Floods",
-  "Flood Forecasts"
+  "Why BP Machine cuffs must be correctly sized",
+  "Find primary care provider",
+  "Stay safe while getting well",
+  "Skeptical men's health clinics services"
 ];
 List<String> imageSliders = [
   "https://domf5oio6qrcr.cloudfront.net/medialibrary/14424/3a381225-29c1-4f7e-81f7-014f79e4a2ba.jpg",
