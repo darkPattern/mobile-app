@@ -51,8 +51,48 @@ class FileUploadProvider extends ChangeNotifier {
   final HomeRepository _homeRepo = HomeRepository();
   HomeRepository get homeRepo => _homeRepo;
 
-  String? responseMessage; // To store the response from the server
+  String? responseMessage; // To sto
+  // re the response from the server
 
+  TextEditingController _userNameController = TextEditingController();
+  TextEditingController get userNameController => _userNameController;
+
+  TextEditingController _ageController = TextEditingController();
+  TextEditingController get ageController => _ageController;
+
+  TextEditingController _weightController = TextEditingController();
+  TextEditingController get weightController => _weightController;
+
+  TextEditingController _heightController = TextEditingController();
+  TextEditingController get heightController => _heightController;
+
+  TextEditingController _bloodGroupController = TextEditingController();
+  TextEditingController get bloodGroupController => _bloodGroupController;
+
+  TextEditingController _allergiesController = TextEditingController();
+  TextEditingController get allergiesController => _allergiesController;
+
+  TextEditingController _bloodSugarController = TextEditingController();
+  TextEditingController get bloodSugarController => _bloodSugarController;
+
+  TextEditingController _bloodPressureController = TextEditingController();
+  TextEditingController get bloodPressureController => _bloodPressureController;
+
+
+
+
+  String userName ='';
+  String  bloodPressure='';
+  String  bloodSugar='';
+  String  bloodGroup='';
+  String  allergies='';
+  String  email='';
+
+  int age=0;
+  String  genderValue='';
+
+  double weight=0, height=0;
+  var gender;
 
   Future<void> uploadFile(File file) async {
     try {

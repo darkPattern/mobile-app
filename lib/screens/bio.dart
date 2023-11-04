@@ -193,7 +193,6 @@ class _ProfilePageState extends State<ProfilePage> {
     final user = UserPreferences.myUser;
 
     return Scaffold(
-      appBar: buildAppBar(context),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
@@ -204,8 +203,7 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 24),
           buildName(user),
           const SizedBox(height: 24),
-          Center(child: buildUpgradeButton()),
-          const SizedBox(height: 24),
+//          const SizedBox(height: 24),
           NumbersWidget(),
           const SizedBox(height: 48),
           buildAbout(user),
@@ -228,10 +226,7 @@ class _ProfilePageState extends State<ProfilePage> {
     ],
   );
 
-  Widget buildUpgradeButton() => ButtonWidget(
-    text: 'Upgrade To PRO',
-    onClicked: () {},
-  );
+
 
   Widget buildAbout(User user) => Container(
     padding: EdgeInsets.symmetric(horizontal: 48),
