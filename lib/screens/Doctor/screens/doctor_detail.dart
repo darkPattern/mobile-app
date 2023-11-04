@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:medicare/styles/colors.dart';
-import 'package:medicare/styles/styles.dart';
+import 'package:kodikon/screens/Doctor/styles/colors.dart';
+import 'package:kodikon/screens/Doctor/styles/styles.dart';
+
 import "package:latlong2/latlong.dart" as latLng;
 
 class SliverDoctorDetail extends StatelessWidget {
@@ -115,12 +116,7 @@ class DoctorLocation extends StatelessWidget {
             center: latLng.LatLng(51.5, -0.09),
             zoom: 13.0,
           ),
-          layers: [
-            TileLayerOptions(
-              urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-              subdomains: ['a', 'b', 'c'],
-            ),
-          ],
+           children: [],
         ),
       ),
     );

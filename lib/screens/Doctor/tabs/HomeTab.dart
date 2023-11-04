@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/styles/colors.dart';
-import 'package:medicare/styles/styles.dart';
+import 'package:kodikon/screens/Doctor/styles/colors.dart';
+import 'package:kodikon/screens/Doctor/styles/styles.dart';
+
 
 List<Map> doctors = [
   {

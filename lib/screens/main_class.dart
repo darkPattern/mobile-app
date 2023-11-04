@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kodikon/screens/Doctor/screens/home.dart';
 import 'package:kodikon/screens/bio.dart';
 import 'package:kodikon/screens/health_data.dart';
 import 'package:kodikon/screens/homescreen.dart';
@@ -173,13 +174,14 @@ class _MainScreenState extends State<MainScreen>
       statusBarIconBrightness: Brightness.dark,
       //set brightness for icons, like dark background light icons
     ));
-    List<String> headers = ["Home", "Add Prescription", "My Stats","Dinner"];
+    List<String> headers = ["Home", "Add Prescription", "My Stats","Dinner","Appointments"];
 
     List<Widget> _widgetOptions = <Widget>[
       Home(),
       Upload(),
       HealthApp(),
       CarouselWithCardsScreen(),
+      Doctor(),
 
 
     ];
@@ -384,7 +386,7 @@ class _MainScreenState extends State<MainScreen>
                           ? Column(
                         children: [
                           ImageIcon(
-                            Image.asset('assets/icons/bio.png').image,
+                            Image.asset('assets/icons/mindfulness.png').image,
                             size: 24.0,
                           ),
                           Container(
@@ -398,10 +400,46 @@ class _MainScreenState extends State<MainScreen>
                         ],
                       )
                           : ImageIcon(
-                        Image.asset('assets/icons/bio.png').image,
+                        Image.asset('assets/icons/mindfulness.png').image,
                         size: 24.0,
                       ),
                       _selectedIndex == 3
+                          ? const Text(
+                        '',
+                        style: TextStyle(fontSize: 14.0),
+                      )
+                          : const Text(''),
+                    ],
+                  ),
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  icon: Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 6.0,
+                    children: [
+                      _selectedIndex == 4
+                          ? Column(
+                        children: [
+                          ImageIcon(
+                            Image.asset('assets/icons/calendar.png').image,
+                            size: 24.0,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            margin: const EdgeInsets.only(top: 5),
+                            height: 2,
+                            width: 12.0,
+                          ),
+                        ],
+                      )
+                          : ImageIcon(
+                        Image.asset('assets/icons/calendar.png').image,
+                        size: 24.0,
+                      ),
+                      _selectedIndex == 4
                           ? const Text(
                         '',
                         style: TextStyle(fontSize: 14.0),

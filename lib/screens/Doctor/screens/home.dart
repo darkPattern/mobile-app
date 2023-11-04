@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/styles/colors.dart';
-import 'package:medicare/tabs/HomeTab.dart';
-import 'package:medicare/tabs/ScheduleTab.dart';
+import 'package:kodikon/screens/Doctor/styles/colors.dart';
+import 'package:kodikon/screens/Doctor/tabs/HomeTab.dart';
+import 'package:kodikon/screens/Doctor/tabs/ScheduleTab.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+
+class Doctor extends StatefulWidget {
+  const Doctor({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _DoctorState createState() => _DoctorState();
 }
 
 List<Map> navigationBarItems = [
@@ -15,7 +16,7 @@ List<Map> navigationBarItems = [
   {'icon': Icons.calendar_today, 'index': 1},
 ];
 
-class _HomeState extends State<Home> {
+class _DoctorState extends State<Doctor> {
   int _selectedIndex = 0;
   void goToSchedule() {
     setState(() {
