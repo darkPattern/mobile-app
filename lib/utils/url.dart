@@ -1,3 +1,3 @@
 class URL {
-  static const String url = "https://2c95-106-206-0-57.ngrok.io";
+  static const String url = "https://f72c-2401-4900-4e51-1b79-845f-d7a2-eb25-c965.ngrok.io";
 }
