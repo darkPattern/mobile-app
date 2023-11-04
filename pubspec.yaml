@@ -83,6 +83,7 @@ dependencies:
   dotted_border: ^2.0.0+1
   iconsax: ^0.0.8
   file_picker: ^5.2.6
+  health: ^8.0.0
 
 dev_dependencies:
   flutter_test:

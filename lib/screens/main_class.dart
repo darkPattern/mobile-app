@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kodikon/screens/bio.dart';
+import 'package:kodikon/screens/health_data.dart';
 import 'package:kodikon/screens/homescreen.dart';
 import 'package:kodikon/screens/welcome_page.dart';
 
@@ -61,7 +63,8 @@ class _MainScreenState extends State<MainScreen>
 
     List<Widget> _widgetOptions = <Widget>[
       HomePage(),
-      HomePage(),
+      ProfilePage(),
+      HealthApp(),
 
 
     ];
