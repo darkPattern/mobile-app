@@ -4,7 +4,9 @@ import 'package:kodikon/screens/bio.dart';
 import 'package:kodikon/screens/health_data.dart';
 import 'package:kodikon/screens/homescreen.dart';
 import 'package:kodikon/screens/register_page.dart';
+import 'package:kodikon/screens/upload.dart';
 import 'package:kodikon/screens/welcome_page.dart';
+import 'package:kodikon/src/pages/home_page.dart';
 
 import 'package:provider/provider.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -63,8 +65,8 @@ class _MainScreenState extends State<MainScreen>
     List<String> headers = ["Home", "Upload", "Y"];
 
     List<Widget> _widgetOptions = <Widget>[
-      HomePage(),
-      RegisterPage(),
+      Home(),
+      Upload(),
       HealthApp(),
 
 
