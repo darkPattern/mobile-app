@@ -47,6 +47,7 @@ class FileUploadProvider extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
   List<String> extractedMedicine = [];
+  List<String> parsedMeds = [];
 
   final HomeRepository _homeRepo = HomeRepository();
   HomeRepository get homeRepo => _homeRepo;
@@ -87,7 +88,7 @@ class FileUploadProvider extends ChangeNotifier {
   String  bloodGroup='';
   String  allergies='';
   String  email='';
-
+  List<String> meds = [];
   int age=0;
   String  genderValue='';
 
@@ -97,8 +98,7 @@ class FileUploadProvider extends ChangeNotifier {
   Future<void> uploadFile(File file) async {
     try {
       print("api");
-      String url =
-          '${URL.url}/extract_text'; // Replace with your upload endpoint
+      String url = '${URL.url}/extract_text'; // Replace with your upload endpoint
       FormData formData = FormData.fromMap({
         "file": await MultipartFile.fromFile(file.path),
       });
@@ -111,18 +111,40 @@ class FileUploadProvider extends ChangeNotifier {
       Map<String, dynamic> responseBody = response.data;
 
       if (responseBody.containsKey('extracted_medicine') &&
-          responseBody['extracted_medicine'] is List) {
-        extractedMedicine =
-            List<String>.from(responseBody['extracted_medicine']);
+          responseBody['extracted_medicine'] is Map<String, dynamic>) {
+        Map<String, dynamic> extractedMedicine =
+        Map<String, dynamic>.from(responseBody['extracted_medicine']);
+
+        String meds = (extractedMedicine['meds'] != null)
+            ? extractedMedicine['meds'].toString()
+            : '';
+
+         parsedMeds = meds.split('-');
+
+        parsedMeds = parsedMeds.where((med) => med.trim().isNotEmpty).toList();
+
+        for (String medicationDetail in parsedMeds) {
+          print('Medication: $medicationDetail');
+
+        }
+        String name = (extractedMedicine['name'] != null)
+            ? extractedMedicine['name'].toString()
+            : '';
+
+        String phNo = (extractedMedicine['ph_no'] != null)
+            ? extractedMedicine['ph_no'].toString()
+            : '';
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setString('savedResponse', json.encode(responseBody));
+
+        notifyListeners(); // Notify the listeners about the change in state
+      } else {
+        // Handle the case when the structure of the response doesn't match expectations
       }
-
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString('savedResponse', json.encode(responseBody));
-
-      notifyListeners(); // Notify the listeners about the change in state
     } catch (e) {
       print('Error uploading file: $e');
       // Handle error scenarios here
     }
   }
+
 }

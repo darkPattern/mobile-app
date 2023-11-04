@@ -220,7 +220,8 @@ class _UploadState extends State<Upload> with SingleTickerProviderStateMixin {
                           child: Text('Upload', style: TextStyle(
                               color: Colors.white),),
                         ),
-                        if (data.extractedMedicine.isNotEmpty)
+
+                        if (true)
                           Padding(
                             padding: const EdgeInsets.all(16.0),
                             child: Column(
@@ -228,19 +229,29 @@ class _UploadState extends State<Upload> with SingleTickerProviderStateMixin {
                               children: <Widget>[
                                 Text(
                                   'Extracted Medicine:',
-                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
+                                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                                 ),
                                 SizedBox(height: 10),
-                                for (var medicineInstruction in data.extractedMedicine)
-                                  ListTile(
-                                    title: Text(
-                                      medicineInstruction,
-                                      style: TextStyle(fontSize: 16,color: Colors.white),
-                                    ),
+                                if (data.parsedMeds.isEmpty)
+                                  Center(
+                                    child: Text('No medicines extracted yet.'),
+                                  )
+                                else
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: data.parsedMeds.map((medicine) {
+                                      return ListTile(
+                                        title: Text(medicine,style: TextStyle(color: Colors.white),),
+                                      );
+                                    }).toList(),
                                   ),
                               ],
                             ),
-                          ),
+                          )
+                        else
+                          Container(),
+
+
                       ],
                     ),
                   )
