@@ -4,9 +4,7 @@ List<List<String>> sweetSayings = [
   ["We’ll help you", "In any way we can,"],
   ["You are Strong", "and courageous"]
 ];
-//https://floodlist.com/news
-//  "https://a-z-animals.com/blog/the-deadliest-floods-of-all-time/"
-//https://ffs.india-water.gov.in/
+
 List<String> articleTitle = [
   "Sop To Follow In Floods",
   "Deadliest Floods And their Impact",
