@@ -1,4 +1,7 @@
 # Kodikon 3.0
 
 > Our domain: Health Tech
-> tech Stack -Flutter ,React ,On device CV,LLM,Flask,
+<br>
+**Tech Stack:** Flutter, React, On Device CV, LLM
+<br>
+**Future Scope:** Patient predictors
