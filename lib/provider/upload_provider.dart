@@ -88,64 +88,51 @@ class FileUploadProvider extends ChangeNotifier {
   String  bloodGroup='';
   String  allergies='';
   String  email='';
-  List<String> meds = [];
   int age=0;
   String  genderValue='';
+  String bool1 = "";
+  Map<String, dynamic> results = {};
 
   double weight=0, height=0;
   var gender;
 
+
+  var darkPatternResult ="";
+
   Future<void> uploadFile(File file) async {
     try {
-      print("api");
-      String url = '${URL.url}/extract_text'; // Replace with your upload endpoint
+      final url = Uri.parse("${URL.url}/process"); // Replace with your upload endpoint
       FormData formData = FormData.fromMap({
-        "file": await MultipartFile.fromFile(file.path),
+        "image": await MultipartFile.fromFile(file.path),
       });
 
-      Response response = await dio.post(
-        url,
-        data: formData,
-      );
+        var request = http.MultipartRequest('POST', url);
 
-      Map<String, dynamic> responseBody = response.data;
+          request.files.add(
+              await http.MultipartFile.fromPath('image', file.path));
+      var res = await request.send();
 
-      if (responseBody.containsKey('extracted_medicine') &&
-          responseBody['extracted_medicine'] is Map<String, dynamic>) {
-        Map<String, dynamic> extractedMedicine =
-        Map<String, dynamic>.from(responseBody['extracted_medicine']);
+      if (res.statusCode == 200) {
+        final respStr = await res.stream.bytesToString();
+        print(respStr);
 
-        String meds = (extractedMedicine['meds'] != null)
-            ? extractedMedicine['meds'].toString()
-            : '';
-
-         parsedMeds = meds.split('-');
-
-        parsedMeds = parsedMeds.where((med) => med.trim().isNotEmpty).toList();
-
-        for (String medicationDetail in parsedMeds) {
-          print('Medication: $medicationDetail');
-
+        // Decoding the JSON response
+        var decodedResponse = json.decode(respStr);
+        if (decodedResponse is Map<String, dynamic>) {
+          var darkPatternResult = decodedResponse['dark_pattern_result'];
+          var imageText = decodedResponse['image_text'];
+          print('Dark Pattern Result: $darkPatternResult');
+          print('Image Text: $imageText');
+        } else {
+          print('Response is not in expected JSON format');
         }
-        String name = (extractedMedicine['name'] != null)
-            ? extractedMedicine['name'].toString()
-            : '';
-
-        String phNo = (extractedMedicine['ph_no'] != null)
-            ? extractedMedicine['ph_no'].toString()
-            : '';
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setString('savedResponse', json.encode(responseBody));
-
-
-        notifyListeners(); // Notify the listeners about the change in state
       } else {
-        // Handle the case when the structure of the response doesn't match expectations
+        print('Non-200 status code received: ${res.statusCode}');
       }
     } catch (e) {
-      print('Error uploading file: $e');
-      // Handle error scenarios here
+      print('Error during file upload: $e');
     }
   }
+
 
 }

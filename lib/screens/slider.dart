@@ -65,9 +65,10 @@ class _sliderState extends State<slider> {
                           if (i == 1)
                             _buildSlide1()
                           else if (i == 2)
-                            _buildSlide2()
-                          else if (i == 3)
                             _buildSlide3()
+                          else if (i == 3)
+                          _buildSlide2()
+
                         ],
                       ),
                     ),
@@ -91,7 +92,7 @@ class _sliderState extends State<slider> {
           child: ClipPath(
             child: ClipRRect(
               child: Lottie.network(
-                'https://assets10.lottiefiles.com/packages/lf20_xgdvjjxc.json',
+                'https://lottie.host/71d2e79d-26f6-4a15-bcdc-dc0a287e1831/6DTx32Pwaa.json',
                 fit: BoxFit.contain,
               ),
             ),
@@ -198,7 +199,7 @@ class _sliderState extends State<slider> {
           child: ClipPath(
             child: ClipRRect(
               child: Lottie.network(
-                'https://assets10.lottiefiles.com/packages/lf20_H2YEX6p8oS.json',
+                'https://lottie.host/40fbbd2a-85e3-48fd-8c4f-d6cd7b2cf004/hknVW4muZI.json',
                 fit: BoxFit.contain,
               ),
             ),
@@ -298,7 +299,7 @@ class _sliderState extends State<slider> {
           child: ClipPath(
             child: ClipRRect(
               child: Lottie.network(
-                'https://assets10.lottiefiles.com/packages/lf20_v3jtadhg.json',
+                'https://lottie.host/0e0ee6e7-21fe-4a64-8a8c-ad84194300e5/PyAN63vkpg.json',
                 fit: BoxFit.contain,
               ),
             ),
@@ -322,7 +323,7 @@ class _sliderState extends State<slider> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
-                  'Effortlessly Stay Healthy Just By a Few Clicks',
+                  'Effortlessly Upload Sketch App User Interfaces',
                   style: simpleWhiteText(),
                   textAlign: TextAlign.center,
                 ),
@@ -391,8 +392,7 @@ class _sliderState extends State<slider> {
 
 blueButton() {
   return ElevatedButton.styleFrom(
-    elevation: 0,
-    primary: Colors.transparent,
+    elevation: 0, backgroundColor: Colors.transparent,
     minimumSize: const Size.fromHeight(50),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(30),

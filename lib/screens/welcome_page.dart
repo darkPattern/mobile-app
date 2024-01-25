@@ -32,7 +32,7 @@ class WelcomePage extends StatelessWidget {
                       height: 20,
                     ),
                     const Text(
-                      "Never Forget a Pill\n with TabMind",
+                      "Never Get Scammed\n with Seva Ai",
                       style: kHeadline,
                       textAlign: TextAlign.center,
                     ),
@@ -41,8 +41,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
-                      child: const Text(
-                        "Simplify your medication routine. TabMind provides gentle reminders and easy tracking, ensuring you or your loved ones stay on top of their health. Get started today!",
+                      child: const Text("Simplify Your E-commerce Journey",
                         style: kBodyText,
                         textAlign: TextAlign.center,
                       ),

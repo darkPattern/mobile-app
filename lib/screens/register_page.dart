@@ -256,13 +256,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: const EdgeInsets.fromLTRB(8.0, 5, 0, 0),
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Text('Age : ',                  style: TextStyle(fontSize: 14,color: Colors.white),
+                    Expanded(child: Text('Email : ',                  style: TextStyle(fontSize: 14,color: Colors.white),
           )),
                     Expanded(
                       flex: 6,
                       child: FormItem(
-                        helperText: 'Age',
-                        hintText: 'Enter Age ',
+                        helperText: 'Email',
+                        hintText: 'Enter Email ',
                         controller: data.ageController,
                         onChanged: (value) {
                           print('Name Saved');
@@ -280,13 +280,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: const EdgeInsets.only(left: 6),
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Text('Weight:', style: TextStyle(fontSize: 14,color: Colors.white),
+                    Expanded(child: Text('Password:', style: TextStyle(fontSize: 14,color: Colors.white),
           )),
                     Expanded(
                       flex: 6,
                       child: FormItem(
-                        helperText: 'Weight ',
-                        hintText: 'Enter weight',
+                        helperText: 'Password ',
+                        hintText: 'Enter Password',
                         controller: data.weightController,
                         onChanged: (value) {
                           print('Name Saved');
@@ -300,134 +300,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 6),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(child: Text('Height:' ,style: TextStyle(fontSize: 14,color: Colors.white),
-          )),
-                    Expanded(
-                      flex: 6,
-                      child: FormItem(
-                        helperText: 'Height ',
-                        hintText: 'Enter Height',
-                        controller: data.heightController,
-                        onChanged: (value) {
-                          print('Name Saved');
-                          setState(() {
-                            data.height = double.parse(value);
-                          });
-                        },
-                        isNumber: true,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 6),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(child: Text('Blood Group :' , style: TextStyle(fontSize: 14,color: Colors.white),
-          )),
-                    Expanded(
-                      flex: 6,
-                      child: FormItem(
-                        helperText: 'Weight ',
-                        hintText: 'Enter Blood Group',
-                        controller: data.bloodGroupController,
-                        onChanged: (value) {
-                          print('Name Saved');
-                          setState(() {
-                            data. bloodGroup = value;
-                          });
-                        },
-                        isNumber: false,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Text(
-                          'Blood Pressure :', style: TextStyle(fontSize: 14,color: Colors.white),
-                        )),
-                    Expanded(
-                      flex: 6,
-                      child: FormItem(
-                        helperText: 'Blood',
-                        hintText: 'Enter Blood Pressure',
-                        controller: data.bloodPressureController,
-                        onChanged: (value) {
-                          print('Name Saved');
-                          setState(() {
-                            data.bloodPressure = value;
-                          });
-                        },
-                        isNumber: false,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Text(
-                          'Blood Sugar :',
-                          style: TextStyle(fontSize: 14,color: Colors.white),
-                        )),
-                    Expanded(
-                      flex: 6,
-                      child: FormItem(
-                        helperText: 'Weight ',
-                        hintText: 'Enter Blood Sugar',
-                        controller: data.bloodSugarController,
-                        onChanged: (value) {
-                          print('Name Saved');
-                          setState(() {
-                            data.bloodSugar = value;
-                          });
-                        },
-                        isNumber: false,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Text(
-                          'Allergies :',
-                          style: TextStyle(fontSize: 14),
-                        )),
-                    Expanded(
-                      flex: 6,
-                      child: FormItem(
-                        hintText: 'Enter Allergies ',
-                        controller: data.allergiesController,
-                        onChanged: (value) {
-                          print('Name Saved');
-                          setState(() {
-                            data. allergies = value;
-                          });
-                        },
-                        isNumber: false,
-                        helperText: 'Allergies',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+
               MyTextButton(
                 onPressed: () {
                   Navigator.push(
